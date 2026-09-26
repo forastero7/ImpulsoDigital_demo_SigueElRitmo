@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sigue el Ritmo · Instrumentos musicales en Perú</title>
+  <meta name="description" content="Guitarras, cajón peruano, charango, teclados, percusión, banda escolar y sonido. Cotiza por WhatsApp con envíos a Lima y provincias.">
+  <meta name="theme-color" content="#570F16">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80'%3E%3Crect width='80' height='80' rx='16' fill='%23570F16'/%3E%3Ccircle cx='40' cy='40' r='26' fill='%23B47C14'/%3E%3Cpath d='M44 18v26a9 9 0 1 1-5-8V18z' fill='%23020201'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#catalogo" data-i18n="nav.catalog">Catálogo</a>
+
+  <div class="demo-bar" role="note" data-i18n="demo.bar">Demo conceptual: productos, fotos y precios son ilustrativos y referenciales.</div>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#inicio" aria-label="Sigue el Ritmo">
+        <svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="40" r="38" fill="var(--dorado)"/><path d="M44 16v28a10 10 0 1 1-6-9.2V16z" fill="var(--negro)"/><path d="M44 16c6 2 12 6 12 14" stroke="var(--negro)" stroke-width="4" fill="none" stroke-linecap="round"/></svg>
+        <span>Sigue el Ritmo</span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Principal">
+        <a href="#catalogo" data-i18n="nav.catalog">Catálogo</a>
+        <a href="#guias" data-i18n="nav.guides">Guías</a>
+        <a href="#envios" data-i18n="nav.shipping">Envíos y pagos</a>
+        <a href="#nosotros" data-i18n="nav.about">Nosotros</a>
+        <a href="#contacto" data-i18n="nav.contact">Contacto</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="lang-btn" id="lang-btn" type="button" data-i18n-aria="lang.aria" aria-label="Switch to English">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg>
+          <span data-i18n="lang.switch">English</span>
+        </button>
+        <button class="list-btn" id="list-btn" type="button" aria-haspopup="dialog">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+          <span data-i18n="nav.list">Mi lista</span>
+          <span class="badge" id="list-count">0</span>
+        </button>
+        <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="main-nav">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+          <span class="sr-only" data-i18n="nav.menu">Menú</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Portada -->
+    <section class="hero" id="inicio">
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <p class="kicker" data-i18n="hero.kicker">Instrumentos · Sonido · Accesorios</p>
+          <h1 data-i18n="hero.title">Tu próximo instrumento está a un mensaje de distancia.</h1>
+          <p class="hero-sub" data-i18n="hero.sub">Guitarras, cajones, teclados y sonido.</p>
+          <form class="hero-search" id="hero-search" role="search">
+            <input type="search" id="hero-q" data-i18n-ph="hero.search" placeholder="Busca guitarra, cajón, charango…" aria-label="Buscar">
+            <button class="btn btn-primario" type="submit" data-i18n="hero.searchBtn">Buscar</button>
+          </form>
+          <div class="hero-ctas">
+            <a class="btn btn-primario" href="#catalogo" data-i18n="hero.cta1">Ver catálogo</a>
+            <a class="btn btn-linea" href="#recomendador" data-i18n="hero.cta2">Ayúdame a elegir</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 400 400">
+            <circle cx="200" cy="200" r="170" fill="var(--dorado)"/>
+            <!-- Silueta de guitarrista -->
+            <g fill="var(--negro)">
+              <circle cx="190" cy="104" r="28"/>
+              <path d="M150 150c10-12 70-12 84 0l18 90-22 6-10-50-8 60 10 110h-26l-10-96-10 96h-26l8-112-6-58-14 46-20-6z"/>
+              <path d="M300 128l10 10-80 80" stroke="var(--negro)" stroke-width="9" stroke-linecap="round"/>
+              <path d="M226 206c-8-4-18-2-24 4-4 4-4 10-8 14-6 4-16 2-24 10-12 12-8 32 6 44s32 18 44 6c8-8 6-18 10-24 4-4 10-4 14-8 6-6 8-16 4-24z"/>
+            </g>
+            <circle cx="200" cy="244" r="7" fill="var(--dorado)"/>
+            <g stroke="var(--crema)" stroke-width="4" fill="none" stroke-linecap="round" opacity=".85">
+              <path d="M58 90c14 8 14 30 0 38"/><path d="M40 78c24 14 24 50 0 64"/>
+              <path d="M340 270c-14 8-14 30 0 38"/><path d="M358 258c-24 14-24 50 0 64"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Franja de confianza -->
+    <section class="trust" aria-label="Confianza">
+      <div class="wrap trust-inner">
+        <div class="trust-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg><span data-i18n="trust.ruc">Tienda formal con RUC</span></div>
+        <div class="trust-item"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10 18h4"/></svg><span data-i18n="trust.pay">Yape, Plin y transferencia</span></div>
+        <div class="trust-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h11v10H2zM13 10h4l4 4v2h-8z"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg><span data-i18n="trust.ship">Lima, Callao y provincias</span></div>
+        <div class="trust-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9l4 4v16H6z"/><path d="M9 11h7M9 15h7M9 7h4"/></svg><span data-i18n="trust.doc">Boleta o factura electrónica</span></div>
+      </div>
+      <p class="wrap trust-note" data-i18n="trust.note">* Por confirmar con la tienda</p>
+    </section>
+
+    <!-- Categorías -->
+    <section class="section" id="categorias">
+      <div class="wrap">
+        <h2 data-i18n="cats.title">Explora por categoría</h2>
+        <p class="section-sub" data-i18n="cats.sub">Del cajón peruano al piano digital.</p>
+        <div class="cat-grid" id="cat-grid"></div>
+      </div>
+    </section>
+
+    <!-- Más consultados -->
+    <section class="section section-alt">
+      <div class="wrap">
+        <h2 data-i18n="popular.title">Los más consultados</h2>
+        <div class="scroller" id="popular"></div>
+      </div>
+    </section>
+
+    <!-- Recomendador -->
+    <section class="section section-vino" id="recomendador">
+      <div class="wrap rec">
+        <div class="rec-head">
+          <h2 data-i18n="rec.title">¿No sabes cuál elegir?</h2>
+          <p data-i18n="rec.sub">Responde 3 preguntas y te sugerimos opciones.</p>
+        </div>
+        <form class="rec-form" id="rec-form">
+          <fieldset>
+            <legend><span class="num">1</span> <span data-i18n="rec.q1">¿Para quién es?</span></legend>
+            <div class="chips" data-name="who"></div>
+          </fieldset>
+          <fieldset>
+            <legend><span class="num">2</span> <span data-i18n="rec.q2">¿Qué nivel tiene?</span></legend>
+            <div class="chips" data-name="lvl"></div>
+          </fieldset>
+          <fieldset>
+            <legend><span class="num">3</span> <span data-i18n="rec.q3">¿Cuánto quieres invertir?</span></legend>
+            <div class="chips" data-name="bud"></div>
+          </fieldset>
+          <div class="rec-actions">
+            <button class="btn btn-primario" type="submit" data-i18n="rec.go">Ver sugerencias</button>
+            <button class="btn btn-linea" type="reset" data-i18n="rec.reset">Empezar de nuevo</button>
+          </div>
+        </form>
+        <div class="rec-result" id="rec-result" hidden aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- Catálogo -->
+    <section class="section" id="catalogo">
+      <div class="wrap">
+        <h2 data-i18n="cat.title">Catálogo</h2>
+        <p class="section-sub" data-i18n="cat.sub">Precios referenciales en soles (S/), IGV incluido.</p>
+
+        <div class="filters" id="filters">
+          <label class="f f-search"><span data-i18n="f.search">Buscar</span>
+            <input type="search" id="f-q" data-i18n-ph="f.searchPh" placeholder="Nombre o tipo de producto">
+          </label>
+          <label class="f"><span data-i18n="f.cat">Categoría</span>
+            <select id="f-cat"></select>
+          </label>
+          <label class="f"><span data-i18n="f.budget">Presupuesto</span>
+            <select id="f-bud"></select>
+          </label>
+          <label class="f"><span data-i18n="f.use">Uso</span>
+            <select id="f-use"></select>
+          </label>
+          <label class="f"><span data-i18n="f.sort">Ordenar</span>
+            <select id="f-sort"></select>
+          </label>
+        </div>
+        <div class="filters-meta">
+          <span id="f-count" aria-live="polite"></span>
+          <button class="link-btn" id="f-clear" type="button" data-i18n="f.clear">Limpiar filtros</button>
+        </div>
+
+        <div class="grid" id="grid"></div>
+        <p class="empty" id="grid-empty" hidden data-i18n="f.empty">No hay productos con esos filtros.</p>
+      </div>
+    </section>
+
+    <!-- Guías -->
+    <section class="section section-alt" id="guias">
+      <div class="wrap">
+        <h2 data-i18n="guides.title">Guías para elegir</h2>
+        <p class="section-sub" data-i18n="guides.sub">Consejos claros, sin tecnicismos.</p>
+        <div class="guides">
+          <article class="guide"><h3 data-i18n="g1.t"></h3><p data-i18n="g1.d"></p><button class="link-btn" data-guide="principiante" data-i18n="g.see">Ver productos</button></article>
+          <article class="guide"><h3 data-i18n="g2.t"></h3><p data-i18n="g2.d"></p><button class="link-btn" data-guide="vivo" data-i18n="g.see">Ver productos</button></article>
+          <article class="guide"><h3 data-i18n="g3.t"></h3><p data-i18n="g3.d"></p><button class="link-btn" data-guide="estudio" data-i18n="g.see">Ver productos</button></article>
+          <article class="guide"><h3 data-i18n="g4.t"></h3><p data-i18n="g4.d"></p><button class="link-btn" data-guide="banda" data-i18n="g.see">Ver productos</button></article>
+          <article class="guide"><h3 data-i18n="g5.t"></h3><p data-i18n="g5.d"></p><button class="link-btn" data-guide="iglesia" data-i18n="g.see">Ver productos</button></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Envíos y pagos -->
+    <section class="section" id="envios">
+      <div class="wrap">
+        <h2 data-i18n="ship.title">Envíos y pagos</h2>
+        <p class="section-sub" data-i18n="ship.sub"></p>
+        <div class="info-grid">
+          <div class="info"><h3 data-i18n="ship.lima.t"></h3><p data-i18n="ship.lima.d"></p></div>
+          <div class="info"><h3 data-i18n="ship.prov.t"></h3><p data-i18n="ship.prov.d"></p></div>
+          <div class="info"><h3 data-i18n="ship.pay.t"></h3><p data-i18n="ship.pay.d"></p>
+            <div class="pay-tags"><span>Yape</span><span>Plin</span><span>BCP</span><span>Interbank</span><span>BBVA</span><span>Scotiabank</span></div>
+          </div>
+          <div class="info"><h3 data-i18n="ship.doc.t"></h3><p data-i18n="ship.doc.d"></p></div>
+        </div>
+        <p class="pending" data-i18n="ship.pending"></p>
+
+        <h3 class="steps-title" data-i18n="steps.title">¿Cómo cotizo?</h3>
+        <ol class="steps">
+          <li data-i18n="step1"></li><li data-i18n="step2"></li><li data-i18n="step3"></li><li data-i18n="step4"></li><li data-i18n="step5"></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Nosotros -->
+    <section class="section section-vino" id="nosotros">
+      <div class="wrap">
+        <h2 data-i18n="about.title">Nosotros y confianza</h2>
+        <p class="about-d" data-i18n="about.d"></p>
+        <div class="info-grid on-vino">
+          <div class="info"><h3 data-i18n="about.warranty.t"></h3><p data-i18n="about.warranty.d"></p></div>
+          <div class="info"><h3 data-i18n="about.returns.t"></h3><p data-i18n="about.returns.d"></p></div>
+          <div class="info"><h3 data-i18n="about.reviews.t"></h3><p data-i18n="about.reviews.d"></p></div>
+          <div class="info"><h3 data-i18n="about.store.t"></h3><p data-i18n="about.store.d"></p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section class="section" id="contacto">
+      <div class="wrap contact">
+        <div>
+          <h2 data-i18n="contact.title">Contacto</h2>
+          <dl class="contact-list">
+            <dt data-i18n="contact.wa">WhatsApp</dt><dd><a class="wa-link" href="#" data-wa="general">+51 999 999 999</a> <small>(demo)</small></dd>
+            <dt data-i18n="contact.hours">Horario</dt><dd data-i18n="contact.hoursV"></dd>
+            <dt data-i18n="contact.social">Redes</dt><dd>Facebook · Instagram · TikTok</dd>
+            <dt data-i18n="contact.book">Libro de Reclamaciones</dt>
+            <dd><button class="btn btn-primario btn-sm" type="button" data-open="book-dialog" data-i18n="contact.bookBtn">Abrir Libro de Reclamaciones</button></dd>
+          </dl>
+        </div>
+        <div class="map-ph" role="img" aria-label="Mapa">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <p data-i18n="contact.map"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <strong class="footer-brand">Sigue el Ritmo</strong>
+        <p data-i18n="footer.company"></p>
+        <p data-i18n="footer.address"></p>
+        <p data-i18n="footer.prices"></p>
+      </div>
+      <div class="footer-links">
+        <button class="book-link" type="button" data-open="book-dialog">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h12a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3z"/><path d="M8 9h7M8 13h7"/></svg>
+          <span data-i18n="footer.book">Libro de Reclamaciones</span>
+        </button>
+        <button class="link-btn light" type="button" data-open="privacy-dialog" data-i18n="footer.privacy">Aviso de privacidad</button>
+        <p class="small" data-i18n="footer.demo"></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flotante -->
+  <a class="wa-float" href="#" data-wa="general" data-i18n-aria="wa.float" aria-label="Escríbenos por WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-3.9-.5-5.6-1.5l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.1-1.2 2.8 1.2 3.2 1.4 3.5 2.4 3.6 5.8 5c2.1.9 3 1 4 .8.7-.1 1.9-.8 2.2-1.5s.3-1.4.2-1.5-.3-.2-.6-.3z"/></svg>
+  </a>
+
+  <!-- Ficha de producto -->
+  <dialog class="dlg dlg-product" id="product-dialog" aria-labelledby="pd-title">
+    <button class="dlg-close" type="button" data-close data-i18n-aria="close" aria-label="Cerrar">×</button>
+    <div id="pd-body"></div>
+  </dialog>
+
+  <!-- Lista de cotización -->
+  <dialog class="dlg dlg-drawer" id="list-dialog" aria-labelledby="list-title">
+    <button class="dlg-close" type="button" data-close data-i18n-aria="close" aria-label="Cerrar">×</button>
+    <h2 id="list-title" data-i18n="list.title">Mi lista de cotización</h2>
+    <p class="empty" id="list-empty" data-i18n="list.empty"></p>
+    <ul class="list-items" id="list-items"></ul>
+    <div id="list-form-wrap">
+      <div class="list-total"><span data-i18n="list.subtotal">Total referencial</span> <strong id="list-total">S/ 0</strong></div>
+      <p class="small" data-i18n="list.subNote"></p>
+      <form id="list-form" class="list-form">
+        <fieldset>
+          <legend data-i18n="list.where">¿Dónde recibes tu pedido?</legend>
+          <div class="seg">
+            <label><input type="radio" name="zone" value="lima" checked> <span data-i18n="list.zone.lima"></span></label>
+            <label><input type="radio" name="zone" value="prov"> <span data-i18n="list.zone.prov"></span></label>
+          </div>
+          <label class="f" id="district-wrap"><span data-i18n="list.district">Distrito</span>
+            <select id="district"></select>
+          </label>
+          <label class="f" id="city-wrap" hidden><span data-i18n="list.city">Ciudad</span>
+            <input type="text" id="city" list="cities" data-i18n-ph="list.cityPh" autocomplete="address-level2">
+          </label>
+          <datalist id="cities">
+            <option>Arequipa</option><option>Trujillo</option><option>Chiclayo</option><option>Piura</option><option>Cusco</option>
+            <option>Huancayo</option><option>Iquitos</option><option>Tacna</option><option>Puno</option><option>Juliaca</option>
+            <option>Ica</option><option>Cajamarca</option><option>Ayacucho</option><option>Chimbote</option><option>Huánuco</option>
+            <option>Pucallpa</option><option>Tarapoto</option><option>Huaraz</option><option>Tumbes</option><option>Moquegua</option>
+          </datalist>
+        </fieldset>
+        <fieldset>
+          <legend data-i18n="list.doc">Comprobante</legend>
+          <div class="seg">
+            <label><input type="radio" name="doc" value="boleta" checked> <span data-i18n="list.boleta"></span></label>
+            <label><input type="radio" name="doc" value="factura"> <span data-i18n="list.factura"></span></label>
+          </div>
+        </fieldset>
+        <label class="f"><span data-i18n="list.name">Tu nombre (opcional)</span>
+          <input type="text" id="cust-name" autocomplete="given-name">
+        </label>
+        <p class="form-error" id="list-error" hidden data-i18n="list.needLoc"></p>
+        <button class="btn btn-wa" type="submit">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><use href="#wa-glyph"/></svg>
+          <span data-i18n="list.send">Solicitar cotización por WhatsApp</span>
+        </button>
+        <p class="small center" data-i18n="list.hint"></p>
+        <button class="link-btn center-block" type="button" id="list-clear" data-i18n="list.clear">Vaciar lista</button>
+      </form>
+    </div>
+  </dialog>
+
+  <dialog class="dlg" id="book-dialog" aria-labelledby="book-title">
+    <button class="dlg-close" type="button" data-close data-i18n-aria="close" aria-label="Cerrar">×</button>
+    <h2 id="book-title" data-i18n="book.title">Libro de Reclamaciones virtual</h2>
+    <p data-i18n="book.d"></p>
+    <button class="btn btn-primario" type="button" data-close data-i18n="book.close">Cerrar</button>
+  </dialog>
+
+  <dialog class="dlg" id="privacy-dialog" aria-labelledby="privacy-title">
+    <button class="dlg-close" type="button" data-close data-i18n-aria="close" aria-label="Cerrar">×</button>
+    <h2 id="privacy-title" data-i18n="footer.privacy">Aviso de privacidad</h2>
+    <p data-i18n="privacy.d"></p>
+    <button class="btn btn-primario" type="button" data-close data-i18n="book.close">Cerrar</button>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="wa-glyph" viewBox="0 0 32 32"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3zm0 23.6c-2 0-3.9-.5-5.6-1.5l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.1-1.2 2.8 1.2 3.2 1.4 3.5 2.4 3.6 5.8 5c2.1.9 3 1 4 .8.7-.1 1.9-.8 2.2-1.5s.3-1.4.2-1.5-.3-.2-.6-.3z"/></symbol>
+  </svg>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
