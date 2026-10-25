@@ -4,12 +4,19 @@
  * reemplazarlos por el inventario real de la tienda antes de publicar.
  * Las marcas quedan "por confirmar" a propósito: no se atribuyen marcas ni stock.
  *
- * Fotos reales: añade `img: "img/productos/archivo.webp"` a un producto
- * (WebP ~800×600 px). Se carga en diferido; si no hay foto se usa la ilustración `icon`.
+ * Fotos reales: `photos: [photo("nombre-descriptivo-01", ancho, alto), ...]`.
+ * Cada foto se guarda en img/productos/ como WebP en dos anchos: <nombre>-320.webp y
+ * <nombre>-<ancho>.webp. La primera es la principal; si hay varias, la ficha muestra galería.
+ * Si un producto no tiene fotos se usa la ilustración `icon`.
  *
  * uses:  principiante · estudiante · banda · iglesia · vivo · estudio · eventos
  * level: inicial · intermedio · pro
  */
+function photo(name, w, h) {
+  var base = "img/productos/" + name;
+  return { src: base + "-" + w + ".webp", srcset: base + "-320.webp 320w, " + base + "-" + w + ".webp " + w + "w", w: w, h: h };
+}
+
 window.CATEGORIES = [
   { id: "guitarras", icon: "guitar", es: "Guitarras y bajos", en: "Guitars & basses" },
   { id: "teclados", icon: "keyboard", es: "Teclados y pianos", en: "Keyboards & pianos" },
@@ -23,42 +30,49 @@ window.PRODUCTS = [
   /* ---------- Guitarras y bajos ---------- */
   {
     id: "gc-39-estudio", cat: "guitarras", icon: "guitar", price: 290, popular: true,
+    photos: [photo("guitarra-clasica-estudio-01", 512, 382)],
     uses: ["principiante", "estudiante"], level: "inicial",
     es: { name: "Guitarra clásica 39\" de estudio", desc: "Cuerdas de nylon y mástil cómodo para quienes recién empiezan.", inc: ["Funda acolchada", "Juego de cuerdas extra", "Afinador de clip"] },
     en: { name: "39\" classical study guitar", desc: "Nylon strings and a comfortable neck for beginners.", inc: ["Padded gig bag", "Spare string set", "Clip-on tuner"] }
   },
   {
     id: "ga-abeto", cat: "guitarras", icon: "guitar", price: 520,
+    photos: [photo("guitarra-acustica-tapa-abeto-01", 512, 382)],
     uses: ["principiante", "vivo", "iglesia"], level: "intermedio",
     es: { name: "Guitarra acústica tapa de abeto", desc: "Cuerdas de metal y cuerpo dreadnought de sonido brillante.", inc: ["Funda", "Púas surtidas"] },
     en: { name: "Spruce-top acoustic guitar", desc: "Steel strings and a bright-sounding dreadnought body.", inc: ["Gig bag", "Assorted picks"] }
   },
   {
     id: "gea-cutaway", cat: "guitarras", icon: "guitar", price: 890, popular: true,
+    photos: [photo("guitarra-electroacustica-cutaway-negra-01", 512, 382)],
     uses: ["vivo", "iglesia", "eventos"], level: "intermedio",
     es: { name: "Guitarra electroacústica cutaway", desc: "Ecualizador con afinador integrado, lista para tocar en vivo.", inc: ["Funda", "Cable 3 m", "Correa"] },
     en: { name: "Cutaway electro-acoustic guitar", desc: "Built-in EQ and tuner, ready to play live.", inc: ["Gig bag", "3 m cable", "Strap"] }
   },
   {
     id: "ge-pack", cat: "guitarras", icon: "electric", price: 1150,
+    photos: [photo("pack-guitarra-electrica-amplificador-01", 512, 382)],
     uses: ["principiante", "vivo"], level: "inicial",
     es: { name: "Pack guitarra eléctrica + amplificador", desc: "Guitarra tipo stratocaster con amplificador de práctica de 10 W.", inc: ["Amplificador 10 W", "Cable", "Correa", "Funda", "Púas"] },
     en: { name: "Electric guitar + amp pack", desc: "Strat-style guitar with a 10 W practice amplifier.", inc: ["10 W amplifier", "Cable", "Strap", "Gig bag", "Picks"] }
   },
   {
     id: "bajo-4", cat: "guitarras", icon: "electric", price: 1290,
+    photos: [photo("bajo-electrico-4-cuerdas-negro-01", 512, 382)],
     uses: ["vivo", "iglesia"], level: "intermedio",
     es: { name: "Bajo eléctrico 4 cuerdas", desc: "Cuerpo sólido y micrófonos P/J para rock, cumbia y alabanza.", inc: ["Funda", "Cable 3 m"] },
     en: { name: "4-string electric bass", desc: "Solid body with P/J pickups for rock, cumbia and worship.", inc: ["Gig bag", "3 m cable"] }
   },
   {
     id: "charango", cat: "guitarras", icon: "charango", price: 450,
+    photos: [photo("charango-naranjillo-tallado-01", 512, 382)],
     uses: ["estudiante", "vivo"], level: "intermedio",
     es: { name: "Charango de naranjillo", desc: "10 cuerdas y caja tallada a mano para música andina.", inc: ["Estuche", "Juego de cuerdas extra"] },
     en: { name: "Naranjillo wood charango", desc: "10 strings and a hand-carved body for Andean music.", inc: ["Case", "Spare string set"] }
   },
   {
     id: "ukelele-soprano", cat: "guitarras", icon: "charango", price: 180,
+    photos: [photo("ukelele-soprano-01", 512, 382)],
     uses: ["principiante", "estudiante"], level: "inicial",
     es: { name: "Ukelele soprano", desc: "Compacto, liviano y fácil de aprender a cualquier edad.", inc: ["Funda", "Púa de fieltro"] },
     en: { name: "Soprano ukulele", desc: "Compact, light and easy to learn at any age.", inc: ["Gig bag", "Felt pick"] }

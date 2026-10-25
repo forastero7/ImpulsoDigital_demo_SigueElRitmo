@@ -53,6 +53,6 @@ El proyecto no necesita configuración de build.
 
 ## Antes de publicar como tienda real
 
-- Reemplazar productos, precios y marcas en `js/products.js` y añadir fotos reales (`img: "img/productos/archivo.webp"`, WebP ~800×600 px; se cargan en diferido).
+- Reemplazar productos, precios y marcas en `js/products.js`. Fotos reales: `photos: [photo("nombre-01", ancho, alto)]` con los WebP en `img/productos/` (ver `REGISTRO_IMAGENES.md`).
 - Confirmar horario, razón social, RUC y el Libro de Reclamaciones oficial.
 - Si se cambia el dominio, actualizar `canonical`, `og:url`, `og:image` y el JSON-LD de `index.html`.

@@ -52,8 +52,14 @@
     return t(qty > 1 ? "msg.singleQty" : "msg.single", vars);
   }
   function waIcon() { return '<svg viewBox="0 0 32 32" aria-hidden="true"><use href="#wa-glyph"/></svg>'; }
-  function media(p, cls) {
-    if (p.img) return '<img class="' + (cls || "art") + ' photo" src="' + esc(p.img) + '" alt="" loading="lazy" decoding="async" width="800" height="600">';
+  /* Imagen del producto: foto real (WebP responsive, carga diferida) o ilustración SVG. */
+  var SIZES = { card: "(max-width: 640px) 46vw, 290px", pd: "(max-width: 960px) 90vw, 430px", li: "56px" };
+  function photoTag(ph, cls, sizes, alt) {
+    return '<img class="' + cls + ' photo" src="' + esc(ph.src) + '" srcset="' + esc(ph.srcset) + '" sizes="' + sizes + '"' +
+      ' width="' + ph.w + '" height="' + ph.h + '" alt="' + esc(alt || "") + '" loading="lazy" decoding="async">';
+  }
+  function media(p, cls, kind, alt) {
+    if (p.photos && p.photos.length) return photoTag(p.photos[0], cls || "art", SIZES[kind || "card"], alt);
     return iconSVG(p.icon, cls);
   }
 
@@ -173,7 +179,7 @@
   function card(p) {
     var inList = !!list[p.id], d = p[lang];
     return '<article class="card" data-id="' + p.id + '">' +
-      '<button class="card-media" type="button" data-view="' + p.id + '" aria-label="' + esc(t("p.details") + ": " + d.name) + '">' +
+      '<button class="card-media' + (p.photos ? " has-photo" : "") + '" type="button" data-view="' + p.id + '" aria-label="' + esc(t("p.details") + ": " + d.name) + '">' +
         media(p) +
         '<span class="tag tag-demo">' + t("p.demo") + "</span>" +
         (p.popular ? '<span class="tag tag-pop">' + t("p.popular") + "</span>" : "") +
@@ -227,7 +233,8 @@
     var qty = list[id] || 1;
     $("#pd-body").innerHTML =
       '<div class="pd">' +
-        '<div class="pd-media">' + media(p) + (p.img ? "" : '<p class="small">' + t("p.photoNote") + "</p>") + "</div>" +
+        '<div class="pd-media' + (p.photos ? " has-photo" : "") + '">' + media(p, "art pd-main", "pd", d.name) +
+          (p.photos ? gallery(p) : '<p class="small">' + t("p.photoNote") + "</p>") + "</div>" +
         '<div class="pd-info">' +
           '<p class="card-cat">' + esc(catName(p.cat)) + ' · <span class="tag-inline">' + t("p.demo") + "</span></p>" +
           '<h2 id="pd-title">' + esc(d.name) + "</h2>" +
@@ -250,9 +257,25 @@
       this.textContent = t("p.added");
       this.classList.replace("btn-outline", "btn-added");
     });
+    $$(".pd-thumb").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var ph = p.photos[+b.dataset.photo], img = $(".pd-main");
+        img.srcset = ph.srcset; img.src = ph.src;
+        $$(".pd-thumb").forEach(function (x) { x.classList.toggle("on", x === b); x.setAttribute("aria-pressed", x === b); });
+      });
+    });
     $("#pd-qty").addEventListener("input", function () {
       $("#pd-quote").href = waUrl(productMsg(p, clampQty(this.value)));
     });
+  }
+
+  /* Miniaturas de galería cuando un producto tiene varias fotos */
+  function gallery(p) {
+    if (p.photos.length < 2) return "";
+    return '<div class="pd-thumbs">' + p.photos.map(function (ph, i) {
+      return '<button type="button" class="pd-thumb' + (i ? "" : " on") + '" data-photo="' + i + '" aria-label="' + esc(t("p.photo") + " " + (i + 1)) + '" aria-pressed="' + !i + '">' +
+        photoTag(ph, "", "64px", "") + "</button>";
+    }).join("") + "</div>";
   }
 
   function openProduct(id) {
@@ -281,7 +304,7 @@
     $("#list-form-wrap").hidden = ids.length === 0;
     $("#list-items").innerHTML = ids.map(function (id) {
       var p = byId[id];
-      return '<li class="li" data-id="' + id + '">' + media(p, "li-art") +
+      return '<li class="li" data-id="' + id + '">' + media(p, "li-art", "li") +
         '<div class="li-info"><p class="li-name">' + esc(p[lang].name) + '</p><p class="li-price">' + money(p.price) + " × " + list[id] + " = <strong>" + money(p.price * list[id]) + "</strong></p></div>" +
         '<div class="li-qty"><button type="button" data-dec="' + id + '" aria-label="−1">−</button><span>' + list[id] + '</span><button type="button" data-inc="' + id + '" aria-label="+1">+</button></div>' +
         '<button class="li-remove" type="button" data-remove="' + id + '">' + t("list.remove") + "</button></li>";
