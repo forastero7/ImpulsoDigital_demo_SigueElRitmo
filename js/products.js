@@ -176,54 +176,63 @@ window.PRODUCTS = [
   /* ---------- Micrófonos y audio ---------- */
   {
     id: "mic-dinamico", cat: "audio", icon: "mic", price: 120, popular: true,
+    photos: [photo("microfono-dinamico-vocal-negro-01", 512, 382)],
     uses: ["iglesia", "vivo", "principiante"], level: "inicial",
     es: { name: "Micrófono dinámico vocal", desc: "Patrón cardioide que reduce el acople, para uso diario.", inc: ["Cable XLR 5 m", "Pinza"] },
     en: { name: "Dynamic vocal microphone", desc: "Cardioid pattern that reduces feedback, for daily use.", inc: ["5 m XLR cable", "Clip"] }
   },
   {
     id: "mic-inalambrico", cat: "audio", icon: "mic", price: 590,
+    photos: [photo("kit-microfonos-inalambricos-uhf-receptor-01", 512, 382)],
     uses: ["iglesia", "eventos"], level: "intermedio",
     es: { name: "Kit 2 micrófonos inalámbricos UHF", desc: "Receptor doble para predicación, animación y eventos.", inc: ["Receptor", "2 micrófonos de mano"] },
     en: { name: "2× UHF wireless microphone kit", desc: "Dual receiver for preaching, hosting and events.", inc: ["Receiver", "2 handheld mics"] }
   },
   {
     id: "mic-condensador", cat: "audio", icon: "mic", price: 390,
+    photos: [photo("microfono-condensador-estudio-arana-01", 512, 382)],
     uses: ["estudio"], level: "inicial",
     es: { name: "Micrófono condensador de estudio", desc: "Diafragma grande para voz, podcast y contenido.", inc: ["Araña antivibración", "Filtro antipop"] },
     en: { name: "Studio condenser microphone", desc: "Large diaphragm for vocals, podcasts and content.", inc: ["Shock mount", "Pop filter"] }
   },
   {
     id: "interfaz-2x2", cat: "audio", icon: "interface", price: 690, popular: true,
+    photos: [photo("interfaz-audio-usb-2x2-01", 512, 382)],
     uses: ["estudio"], level: "inicial",
     es: { name: "Interfaz de audio USB 2×2", desc: "Dos entradas con phantom 48 V para grabar en casa.", inc: ["Cable USB", "Software de grabación"] },
     en: { name: "2×2 USB audio interface", desc: "Two inputs with 48 V phantom to record at home.", inc: ["USB cable", "Recording software"] }
   },
   {
     id: "consola-8", cat: "audio", icon: "mixer", price: 850,
+    photos: [photo("consola-mezcladora-8-canales-01", 512, 382)],
     uses: ["iglesia", "eventos", "estudio"], level: "intermedio",
     es: { name: "Consola 8 canales con USB y efectos", desc: "Preamplificadores de micrófono, efectos y grabación USB.", inc: ["Fuente de poder"] },
     en: { name: "8-channel mixer with USB & FX", desc: "Mic preamps, effects and USB recording.", inc: ["Power supply"] }
   },
   {
     id: "parlante-15", cat: "audio", icon: "speaker", price: 1390,
+    photos: [photo("parlante-activo-15-negro-01", 512, 382)],
     uses: ["iglesia", "eventos", "vivo"], level: "intermedio",
     es: { name: "Parlante activo 15\"", desc: "Bluetooth, mezclador de 3 canales y entrada de micrófono.", inc: ["Cable de poder"] },
     en: { name: "15\" powered speaker", desc: "Bluetooth, 3-channel mixer and mic input.", inc: ["Power cable"] }
   },
   {
     id: "monitores-5", cat: "audio", icon: "monitor", price: 1290,
+    photos: [photo("par-monitores-estudio-5-01", 512, 382)],
     uses: ["estudio"], level: "intermedio",
     es: { name: "Par de monitores de estudio 5\"", desc: "Biamplificados, con ajuste según tu habitación.", inc: ["Cables de poder"] },
     en: { name: "Pair of 5\" studio monitors", desc: "Bi-amped, with room adjustment controls.", inc: ["Power cables"] }
   },
   {
     id: "audifonos-estudio", cat: "audio", icon: "headphones", price: 290,
+    photos: [photo("audifonos-estudio-cerrados-negros-01", 512, 382)],
     uses: ["estudio", "eventos"], level: "inicial",
     es: { name: "Audífonos de estudio cerrados", desc: "Respuesta plana para mezclar y buen aislamiento.", inc: ["Adaptador 6,3 mm"] },
     en: { name: "Closed-back studio headphones", desc: "Flat response for mixing and good isolation.", inc: ["6.3 mm adapter"] }
   },
   {
     id: "controladora-dj", cat: "audio", icon: "dj", price: 1190,
+    photos: [photo("controladora-dj-2-canales-01", 512, 382)],
     uses: ["eventos", "estudio"], level: "inicial",
     es: { name: "Controladora DJ 2 canales", desc: "Jog wheels, pads de performance y tarjeta de sonido.", inc: ["Cable USB", "Software de DJ"] },
     en: { name: "2-channel DJ controller", desc: "Jog wheels, performance pads and sound card.", inc: ["USB cable", "DJ software"] }

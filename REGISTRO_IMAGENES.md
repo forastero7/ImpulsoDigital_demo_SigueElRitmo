@@ -41,8 +41,23 @@ Fotos reales incorporadas por grupos. Originales fuera del proyecto publicado; e
 
 > Observaciones: la batería electrónica de la foto es un kit completo (5 pads y 3 platillos), mientras que la web la llama "compacta". Congas, bongós y timbales muestran bordes de cajas de luz del estudio. Pendiente de confirmar con el cliente.
 
-## Pendientes de foto (22)
+## Grupo 4 · Micrófonos y audio (9 fotos)
 
-- **Micrófonos y audio:** Micrófono dinámico vocal, Kit 2 micrófonos inalámbricos UHF, Micrófono condensador de estudio, Interfaz de audio USB 2×2, Consola 8 canales con USB y efectos, Parlante activo 15", Par de monitores de estudio 5", Audífonos de estudio cerrados, Controladora DJ 2 canales
+| Producto | Archivo | Original (JPG) | WebP 320 + 512 |
+|---|---|---|---|
+| Micrófono dinámico vocal | `microfono-dinamico-vocal-negro-01` | 17.2 KB | 14.1 KB |
+| Kit 2 micrófonos inalámbricos UHF | `kit-microfonos-inalambricos-uhf-receptor-01` | 17.4 KB | 12.5 KB |
+| Micrófono condensador de estudio | `microfono-condensador-estudio-arana-01` | 22.1 KB | 16.7 KB |
+| Interfaz de audio USB 2×2 | `interfaz-audio-usb-2x2-01` | 17.3 KB | 11.8 KB |
+| Consola 8 canales con USB y efectos | `consola-mezcladora-8-canales-01` | 30.9 KB | 24.8 KB |
+| Parlante activo 15" | `parlante-activo-15-negro-01` | 23.1 KB | 17.9 KB |
+| Par de monitores de estudio 5" | `par-monitores-estudio-5-01` | 17.5 KB | 10.7 KB |
+| Audífonos de estudio cerrados | `audifonos-estudio-cerrados-negros-01` | 17.7 KB | 11.6 KB |
+| Controladora DJ 2 canales | `controladora-dj-2-canales-01` | 31.1 KB | 24.0 KB |
+
+> Observaciones: el kit inalámbrico y la consola muestran bordes de cajas de luz del estudio.
+
+## Pendientes de foto (13)
+
 - **Amplificadores:** Amplificador de guitarra 20 W, Amplificador de guitarra 50 W 1×12", Amplificador de bajo 30 W, Amplificador acústico 40 W, Amplificador de teclado 60 W
 - **Accesorios musicales:** Afinador cromático de clip, Juego de cuerdas de nylon, Juego de cuerdas para acústica, Cable de instrumento 6 m, Pedestal de micrófono con boom, Baquetas 5A de nogal (par), Estuche acolchado para guitarra, Correa ajustable para guitarra
