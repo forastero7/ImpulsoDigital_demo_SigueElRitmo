@@ -247,6 +247,7 @@ window.PRODUCTS = [
   },
   {
     id: "amp-50", cat: "amplificadores", icon: "amp", price: 1490,
+    photos: [photo("amplificador-guitarra-combo-1x12-reverb-01", 512, 382)],
     uses: ["vivo", "iglesia"], level: "pro",
     es: { name: "Amplificador de guitarra 50 W 1×12\"", desc: "Dos canales, reverb y salida de línea para escenario.", inc: ["Pedal de cambio de canal"] },
     en: { name: "50 W 1×12\" guitar amplifier", desc: "Two channels, reverb and line out for the stage.", inc: ["Channel footswitch"] }
@@ -259,12 +260,14 @@ window.PRODUCTS = [
   },
   {
     id: "amp-acustica", cat: "amplificadores", icon: "amp", price: 890,
+    photos: [photo("amplificador-acustico-madera-01", 512, 382)],
     uses: ["vivo", "iglesia", "eventos"], level: "intermedio",
     es: { name: "Amplificador acústico 40 W", desc: "Entradas para guitarra y micrófono, con reverb.", inc: [] },
     en: { name: "40 W acoustic amplifier", desc: "Guitar and mic inputs, with reverb.", inc: [] }
   },
   {
     id: "amp-teclado", cat: "amplificadores", icon: "speaker", price: 1190,
+    photos: [photo("amplificador-teclado-3-canales-01", 512, 382)],
     uses: ["iglesia", "vivo"], level: "intermedio",
     es: { name: "Amplificador de teclado 60 W", desc: "Tres canales para teclado, micrófono y reproductor.", inc: [] },
     en: { name: "60 W keyboard amplifier", desc: "Three channels for keyboard, mic and player.", inc: [] }
