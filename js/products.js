@@ -81,24 +81,28 @@ window.PRODUCTS = [
   /* ---------- Teclados y pianos ---------- */
   {
     id: "teclado-61", cat: "teclados", icon: "keyboard", price: 690, popular: true,
+    photos: [photo("teclado-61-teclas-negro-01", 512, 382)],
     uses: ["principiante", "estudiante", "iglesia"], level: "inicial",
     es: { name: "Teclado 61 teclas sensitivas", desc: "Cientos de sonidos y ritmos, modo aprendizaje y salida de audífonos.", inc: ["Adaptador de corriente", "Atril"] },
     en: { name: "61-key touch-sensitive keyboard", desc: "Hundreds of sounds and rhythms, lesson mode and headphone out.", inc: ["Power adapter", "Music rest"] }
   },
   {
     id: "piano-88", cat: "teclados", icon: "piano", price: 2490, popular: true,
+    photos: [photo("piano-digital-88-teclas-mueble-01", 512, 382)],
     uses: ["estudiante", "iglesia", "estudio"], level: "intermedio",
     es: { name: "Piano digital 88 teclas contrapesadas", desc: "Acción martillo, pedal sustain y conexión USB-MIDI.", inc: ["Pedal sustain", "Adaptador", "Atril"] },
     en: { name: "88-key weighted digital piano", desc: "Hammer action, sustain pedal and USB-MIDI.", inc: ["Sustain pedal", "Adapter", "Music rest"] }
   },
   {
     id: "controlador-49", cat: "teclados", icon: "keyboard", price: 590,
+    photos: [photo("teclado-controlador-midi-pads-01", 512, 382)],
     uses: ["estudio", "eventos"], level: "intermedio",
     es: { name: "Teclado controlador MIDI 49 teclas", desc: "Pads, perillas asignables y conexión USB para producir música.", inc: ["Cable USB"] },
     en: { name: "49-key MIDI controller", desc: "Pads, assignable knobs and USB for music production.", inc: ["USB cable"] }
   },
   {
     id: "soporte-teclado", cat: "teclados", icon: "stand", price: 110,
+    photos: [photo("soporte-teclado-x-doble-tijera-01", 512, 382)],
     uses: ["principiante", "iglesia", "vivo"], level: "inicial",
     es: { name: "Soporte en X para teclado", desc: "Doble tijera, altura regulable y seguro de bloqueo.", inc: [] },
     en: { name: "X-style keyboard stand", desc: "Double-braced, height adjustable with locking pin.", inc: [] }

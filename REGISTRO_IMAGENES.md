@@ -14,9 +14,19 @@ Fotos reales incorporadas por grupos. Originales fuera del proyecto publicado; e
 | Charango de naranjillo | `charango-naranjillo-tallado-01` | 19.3 KB | 11.3 KB |
 | Ukelele soprano | `ukelele-soprano-01` | 16.4 KB | 8.7 KB |
 
-## Pendientes de foto (35)
+## Grupo 2 · Teclados y pianos (4 fotos)
 
-- **Teclados y pianos:** Teclado 61 teclas sensitivas, Piano digital 88 teclas contrapesadas, Teclado controlador MIDI 49 teclas, Soporte en X para teclado
+| Producto | Archivo | Original (JPG) | WebP 320 + 512 |
+|---|---|---|---|
+| Teclado 61 teclas sensitivas | `teclado-61-teclas-negro-01` | 27.1 KB | 20.9 KB |
+| Piano digital 88 teclas contrapesadas | `piano-digital-88-teclas-mueble-01` | 17.7 KB | 12.4 KB |
+| Teclado controlador MIDI 49 teclas | `teclado-controlador-midi-pads-01` | 22.5 KB | 16.1 KB |
+| Soporte en X para teclado | `soporte-teclado-x-doble-tijera-01` | 19.8 KB | 13.8 KB |
+
+> Observaciones: la foto del controlador MIDI muestra un teclado más corto que 49 teclas, y el piano digital tiene 3 pedales en el mueble (la ficha dice "Pedal sustain"). Pendiente de confirmar con el cliente.
+
+## Pendientes de foto (31)
+
 - **Baterías y percusión:** Batería acústica 5 cuerpos, Batería electrónica compacta, Cajón peruano afinable, Cajón peruano de estudio, Par de congas 11" y 12", Bongós de madera 7" y 8", Timbales 13" y 14" con cencerro, Tarola escolar 14", Bombo de desfile 22"
 - **Micrófonos y audio:** Micrófono dinámico vocal, Kit 2 micrófonos inalámbricos UHF, Micrófono condensador de estudio, Interfaz de audio USB 2×2, Consola 8 canales con USB y efectos, Parlante activo 15", Par de monitores de estudio 5", Audífonos de estudio cerrados, Controladora DJ 2 canales
 - **Amplificadores:** Amplificador de guitarra 20 W, Amplificador de guitarra 50 W 1×12", Amplificador de bajo 30 W, Amplificador acústico 40 W, Amplificador de teclado 60 W
