@@ -1,10 +1,11 @@
 (function () {
   "use strict";
+  document.documentElement.classList.remove("no-js");
 
-  /* Número de WhatsApp de DEMO. Reemplazar por el número oficial de WhatsApp Business de la tienda. */
-  var WHATSAPP = "51999999999";
-  var LIST_KEY = "ser-lista";
-  var LANG_KEY = "ser-lang";
+  /* Número comercial de WhatsApp de Lima Music Store (formato internacional, sin "+"). */
+  var WHATSAPP = "51902826428";
+  var LIST_KEY = "lms-lista";
+  var LANG_KEY = "lms-lang";
 
   var USES = ["principiante", "estudiante", "banda", "iglesia", "vivo", "estudio", "eventos"];
   var LEVELS = ["inicial", "intermedio", "pro"];
@@ -18,7 +19,7 @@
     set: function (k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) { /* sin almacenamiento */ } }
   };
 
-  var lang = store.get(LANG_KEY, null) || ((navigator.language || "es").slice(0, 2) === "en" ? "en" : "es");
+  var lang = store.get(LANG_KEY, "es") === "en" ? "en" : "es"; // español por defecto; inglés solo con el botón
   var list = store.get(LIST_KEY, {}); // { id: qty }
 
   var byId = {};
@@ -37,10 +38,30 @@
   function esc(s) {
     return String(s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; });
   }
-  function norm(s) { return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, ""); }
+  function norm(s) { return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, ""); }
   function catName(id) { var c = CATEGORIES.filter(function (x) { return x.id === id; })[0]; return c ? c[lang] : ""; }
   function waUrl(text) { return "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(text); }
-  function openWa(text) { window.open(waUrl(text), "_blank", "noopener"); }
+  /* Abre WhatsApp en una pestaña nueva; si el navegador lo bloquea, navega en la misma. */
+  function openWa(text) {
+    var url = waUrl(text);
+    var w = window.open(url, "_blank");
+    if (w) w.opener = null; else location.href = url;
+  }
+  function productMsg(p, qty) {
+    var vars = { name: p[lang].name, price: money(p.price), qty: qty };
+    return t(qty > 1 ? "msg.singleQty" : "msg.single", vars);
+  }
+  function waIcon() { return '<svg viewBox="0 0 32 32" aria-hidden="true"><use href="#wa-glyph"/></svg>'; }
+  /* Imagen del producto: foto real (WebP responsive, carga diferida) o ilustración SVG. */
+  var SIZES = { card: "(max-width: 640px) 46vw, 290px", pd: "(max-width: 960px) 90vw, 430px", li: "56px" };
+  function photoTag(ph, cls, sizes, alt) {
+    return '<img class="' + cls + ' photo" src="' + esc(ph.src) + '" srcset="' + esc(ph.srcset) + '" sizes="' + sizes + '"' +
+      ' width="' + ph.w + '" height="' + ph.h + '" alt="' + esc(alt || "") + '" loading="lazy" decoding="async">';
+  }
+  function media(p, cls, kind, alt) {
+    if (p.photos && p.photos.length) return photoTag(p.photos[0], cls || "art", SIZES[kind || "card"], alt);
+    return iconSVG(p.icon, cls);
+  }
 
   var toastTimer;
   function toast(msg) {
@@ -58,7 +79,9 @@
     $$("[data-i18n]").forEach(function (el) { el.textContent = t(el.getAttribute("data-i18n")); });
     $$("[data-i18n-ph]").forEach(function (el) { el.placeholder = t(el.getAttribute("data-i18n-ph")); });
     $$("[data-i18n-aria]").forEach(function (el) { el.setAttribute("aria-label", t(el.getAttribute("data-i18n-aria"))); });
+    $$('a[data-wa="general"]').forEach(function (a) { a.href = waUrl(t("msg.general")); });
     fillSelects();
+    renderCatChips();
     renderCategories();
     renderRecChips();
     renderPopular();
@@ -128,6 +151,7 @@
     state.use = $("#f-use").value;
     state.sort = $("#f-sort").value;
     renderGrid();
+    renderCatChips();
   }
   ["#f-cat", "#f-bud", "#f-use", "#f-sort"].forEach(function (s) { $(s).addEventListener("change", readFilters); });
   $("#f-q").addEventListener("input", readFilters);
@@ -135,12 +159,14 @@
     state = { q: "", cat: "", bud: "", use: "", sort: "pop" };
     fillSelects();
     renderGrid();
+    renderCatChips();
   });
 
   function goCatalog(patch) {
     Object.keys(patch).forEach(function (k) { state[k] = patch[k]; });
     fillSelects();
     renderGrid();
+    renderCatChips();
     $("#catalogo").scrollIntoView({ behavior: "smooth" });
   }
 
@@ -151,20 +177,21 @@
 
   /* ---------- Tarjetas ---------- */
   function card(p) {
-    var inList = !!list[p.id];
+    var inList = !!list[p.id], d = p[lang];
     return '<article class="card" data-id="' + p.id + '">' +
-      '<button class="card-media" type="button" data-view="' + p.id + '" aria-label="' + esc(t("p.details") + ": " + p[lang].name) + '">' +
-        iconSVG(p.icon) +
-        '<span class="tag tag-illus">' + t("p.illus") + "</span>" +
+      '<button class="card-media' + (p.photos ? " has-photo" : "") + '" type="button" data-view="' + p.id + '" aria-label="' + esc(t("p.details") + ": " + d.name) + '">' +
+        media(p) +
+        '<span class="tag tag-demo">' + t("p.demo") + "</span>" +
         (p.popular ? '<span class="tag tag-pop">' + t("p.popular") + "</span>" : "") +
       "</button>" +
       '<div class="card-body">' +
         '<p class="card-cat">' + esc(catName(p.cat)) + "</p>" +
-        '<h3 class="card-title"><button type="button" data-view="' + p.id + '">' + esc(p[lang].name) + "</button></h3>" +
-        '<p class="price"><span class="price-label">' + t("p.ref") + '</span><strong>' + money(p.price) + "</strong></p>" +
+        '<h3 class="card-title"><button type="button" data-view="' + p.id + '">' + esc(d.name) + "</button></h3>" +
+        '<p class="card-desc">' + esc(d.desc) + "</p>" +
+        '<p class="price"><strong>' + money(p.price) + '</strong><span class="price-label">' + t("p.ref") + "</span></p>" +
         '<div class="card-actions">' +
-          '<button class="btn btn-sm ' + (inList ? "btn-added" : "btn-primario") + '" type="button" data-add="' + p.id + '">' + (inList ? t("p.added") : t("p.add")) + "</button>" +
-          '<button class="btn btn-sm btn-wa-outline" type="button" data-quote="' + p.id + '" aria-label="' + esc(t("p.quote") + ": " + p[lang].name) + '"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#wa-glyph"/></svg><span>' + t("p.quote") + "</span></button>" +
+          '<a class="btn btn-sm btn-wa" href="' + esc(waUrl(productMsg(p, 1))) + '" target="_blank" rel="noopener" aria-label="' + esc(t("p.quoteLong") + ": " + d.name) + '">' + waIcon() + "<span>" + t("p.quote") + "</span></a>" +
+          '<button class="btn btn-sm ' + (inList ? "btn-added" : "btn-outline") + '" type="button" data-add="' + p.id + '" aria-pressed="' + inList + '" aria-label="' + esc((inList ? t("p.added") : t("p.add")) + ": " + d.name) + '">' + (inList ? t("p.addedShort") : t("p.addShort")) + "</button>" +
         "</div>" +
       "</div></article>";
   }
@@ -182,10 +209,19 @@
 
   function renderCategories() {
     $("#cat-grid").innerHTML = CATEGORIES.map(function (c) {
-      var n = PRODUCTS.filter(function (p) { return p.cat === c.id; }).length;
-      var from = Math.min.apply(null, PRODUCTS.filter(function (p) { return p.cat === c.id; }).map(function (p) { return p.price; }));
-      return '<button class="cat" type="button" data-cat="' + c.id + '">' + iconSVG(c.icon, "cat-art") +
-        '<span class="cat-name">' + esc(c[lang]) + '</span><span class="cat-meta">' + n + " · " + (lang === "en" ? "from " : "desde ") + money(from) + "</span></button>";
+      var items = PRODUCTS.filter(function (p) { return p.cat === c.id; });
+      var from = Math.min.apply(null, items.map(function (p) { return p.price; }));
+      return '<button class="cat reveal" type="button" data-cat="' + c.id + '">' + iconSVG(c.icon, "cat-art") +
+        '<span class="cat-name">' + esc(c[lang]) + '</span><span class="cat-meta">' + items.length + " · " + (lang === "en" ? "from " : "desde ") + money(from) + "</span>" +
+        '<span class="cat-arrow" aria-hidden="true">→</span></button>';
+    }).join("");
+    observeReveal();
+  }
+
+  function renderCatChips() {
+    $("#cat-chips").innerHTML = [{ id: "", es: t("f.all"), en: t("f.all") }].concat(CATEGORIES).map(function (c) {
+      var on = state.cat === c.id;
+      return '<button type="button" class="cchip' + (on ? " on" : "") + '" data-chip="' + c.id + '" aria-pressed="' + on + '">' + esc(c[lang]) + "</button>";
     }).join("");
   }
 
@@ -197,12 +233,13 @@
     var qty = list[id] || 1;
     $("#pd-body").innerHTML =
       '<div class="pd">' +
-        '<div class="pd-media">' + iconSVG(p.icon) + '<p class="small">' + t("p.photoNote") + "</p></div>" +
+        '<div class="pd-media' + (p.photos ? " has-photo" : "") + '">' + media(p, "art pd-main", "pd", d.name) +
+          (p.photos ? gallery(p) : '<p class="small">' + t("p.photoNote") + "</p>") + "</div>" +
         '<div class="pd-info">' +
-          '<p class="card-cat">' + esc(catName(p.cat)) + ' · <span class="tag-inline">' + t("p.illus") + "</span></p>" +
+          '<p class="card-cat">' + esc(catName(p.cat)) + ' · <span class="tag-inline">' + t("p.demo") + "</span></p>" +
           '<h2 id="pd-title">' + esc(d.name) + "</h2>" +
           '<p class="muted">' + t("p.brand") + "</p>" +
-          '<p class="price big"><span class="price-label">' + t("p.ref") + "</span><strong>" + money(p.price) + "</strong></p>" +
+          '<p class="price big"><strong>' + money(p.price) + '</strong><span class="price-label">' + t("p.ref") + "</span></p>" +
           "<p>" + esc(d.desc) + "</p>" +
           (d.inc.length ? "<h3>" + t("p.includes") + '</h3><ul class="inc">' + d.inc.map(function (i) { return "<li>" + esc(i) + "</li>"; }).join("") + "</ul>" : "") +
           '<dl class="pd-meta"><dt>' + t("p.level") + "</dt><dd>" + t("lvl." + p.level) + "</dd>" +
@@ -210,20 +247,35 @@
           '<p class="stock">' + t("p.stock") + "</p>" +
           '<div class="pd-actions">' +
             '<label class="qty"><span>' + t("p.qty") + '</span><input type="number" id="pd-qty" min="1" max="99" value="' + qty + '"></label>' +
-            '<button class="btn btn-primario" type="button" id="pd-add">' + t("p.add") + "</button>" +
-            '<button class="btn btn-wa" type="button" id="pd-quote"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#wa-glyph"/></svg><span>' + t("p.quote") + "</span></button>" +
+            '<button class="btn btn-outline" type="button" id="pd-add">' + t("p.add") + "</button>" +
+            '<a class="btn btn-wa" id="pd-quote" href="' + esc(waUrl(productMsg(p, qty))) + '" target="_blank" rel="noopener">' + waIcon() + "<span>" + t("p.quoteLong") + "</span></a>" +
           "</div>" +
         "</div>" +
       "</div>";
     $("#pd-add").addEventListener("click", function () {
       setQty(id, clampQty($("#pd-qty").value));
       this.textContent = t("p.added");
-      this.classList.replace("btn-primario", "btn-added");
+      this.classList.replace("btn-outline", "btn-added");
     });
-    $("#pd-quote").addEventListener("click", function () {
-      var q = clampQty($("#pd-qty").value);
-      openWa(t("msg.single", { name: d.name }).replace("1 × ", q + " × "));
+    $$(".pd-thumb").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var ph = p.photos[+b.dataset.photo], img = $(".pd-main");
+        img.srcset = ph.srcset; img.src = ph.src;
+        $$(".pd-thumb").forEach(function (x) { x.classList.toggle("on", x === b); x.setAttribute("aria-pressed", x === b); });
+      });
     });
+    $("#pd-qty").addEventListener("input", function () {
+      $("#pd-quote").href = waUrl(productMsg(p, clampQty(this.value)));
+    });
+  }
+
+  /* Miniaturas de galería cuando un producto tiene varias fotos */
+  function gallery(p) {
+    if (p.photos.length < 2) return "";
+    return '<div class="pd-thumbs">' + p.photos.map(function (ph, i) {
+      return '<button type="button" class="pd-thumb' + (i ? "" : " on") + '" data-photo="' + i + '" aria-label="' + esc(t("p.photo") + " " + (i + 1)) + '" aria-pressed="' + !i + '">' +
+        photoTag(ph, "", "64px", "") + "</button>";
+    }).join("") + "</div>";
   }
 
   function openProduct(id) {
@@ -252,7 +304,7 @@
     $("#list-form-wrap").hidden = ids.length === 0;
     $("#list-items").innerHTML = ids.map(function (id) {
       var p = byId[id];
-      return '<li class="li" data-id="' + id + '">' + iconSVG(p.icon, "li-art") +
+      return '<li class="li" data-id="' + id + '">' + media(p, "li-art", "li") +
         '<div class="li-info"><p class="li-name">' + esc(p[lang].name) + '</p><p class="li-price">' + money(p.price) + " × " + list[id] + " = <strong>" + money(p.price * list[id]) + "</strong></p></div>" +
         '<div class="li-qty"><button type="button" data-dec="' + id + '" aria-label="−1">−</button><span>' + list[id] + '</span><button type="button" data-inc="' + id + '" aria-label="+1">+</button></div>' +
         '<button class="li-remove" type="button" data-remove="' + id + '">' + t("list.remove") + "</button></li>";
@@ -288,7 +340,7 @@
     lines.push("");
     lines.push(t("msg.where", { loc: loc }));
     lines.push(t("msg.ask"));
-    lines.push(t("msg.doc", { doc: doc === "factura" ? (lang === "en" ? "invoice (factura)" : "factura") : (lang === "en" ? "receipt (boleta)" : "boleta") }));
+    lines.push(t("msg.doc", { doc: t("msg." + doc) }));
     if (name) lines.push(t("msg.name", { name: name }));
     lines.push(t("msg.ref", { total: money(listTotal()) }));
     openWa(lines.join("\n"));
@@ -343,34 +395,30 @@
     r.dataset.shown = "1";
     r.innerHTML = scored.length
       ? "<h3>" + t("rec.result") + '</h3><div class="grid grid-rec">' + scored.map(function (x) { return card(x.p); }).join("") + '</div><p class="small">' + t("rec.note") + "</p>"
-      : '<p>' + t("rec.none") + '</p><a class="btn btn-wa" href="' + waUrl(t("msg.general")) + '" target="_blank" rel="noopener"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="#wa-glyph"/></svg><span>' + t("wa.float") + "</span></a>";
+      : '<p>' + t("rec.none") + '</p><a class="btn btn-wa" href="' + esc(waUrl(t("msg.general"))) + '" target="_blank" rel="noopener">' + waIcon() + "<span>" + t("wa.float") + "</span></a>";
   }
 
   /* ---------- Delegación de eventos ---------- */
   document.addEventListener("click", function (e) {
-    var el = e.target.closest("[data-add],[data-quote],[data-view],[data-cat],[data-guide],[data-inc],[data-dec],[data-remove],[data-wa],[data-open],[data-close]");
+    var el = e.target.closest("[data-add],[data-view],[data-cat],[data-chip],[data-inc],[data-dec],[data-remove],[data-open],[data-close]");
     if (!el) return;
     var d = el.dataset;
     if (d.add) {
       if (list[d.add]) { setQty(d.add, 0); toast(t("toast.removed")); }
       else { setQty(d.add, 1); toast(t("toast.added")); }
-    } else if (d.quote) {
-      openWa(t("msg.single", { name: byId[d.quote][lang].name }));
     } else if (d.view) {
       openProduct(d.view);
     } else if (d.cat) {
       goCatalog({ cat: d.cat, q: "", use: "", bud: "" });
-    } else if (d.guide) {
-      goCatalog({ use: d.guide, cat: "", q: "", bud: "" });
+    } else if (d.chip !== undefined) {
+      state.cat = d.chip;
+      fillSelects(); renderGrid(); renderCatChips();
     } else if (d.inc) {
       setQty(d.inc, Math.min(list[d.inc] + 1, 99));
     } else if (d.dec) {
       setQty(d.dec, list[d.dec] - 1);
     } else if (d.remove) {
       setQty(d.remove, 0);
-    } else if (d.wa) {
-      e.preventDefault();
-      openWa(t("msg.general"));
     } else if (d.open) {
       showDialog(document.getElementById(d.open));
     } else if (el.hasAttribute("data-close")) {
@@ -396,5 +444,20 @@
     a.addEventListener("click", function () { document.body.classList.remove("nav-open"); $("#menu-btn").setAttribute("aria-expanded", "false"); });
   });
 
+  /* ---------- Animación de entrada discreta ---------- */
+  var io = "IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches
+    ? new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+      }, { rootMargin: "0px 0px -8% 0px" })
+    : null;
+  function observeReveal() {
+    $$(".reveal:not(.in)").forEach(function (el) { if (io) io.observe(el); else el.classList.add("in"); });
+  }
+
+  /* Cabecera compacta al hacer scroll */
+  var header = $(".site-header");
+  window.addEventListener("scroll", function () { header.classList.toggle("scrolled", window.scrollY > 10); }, { passive: true });
+
   applyLang();
+  observeReveal();
 })();
