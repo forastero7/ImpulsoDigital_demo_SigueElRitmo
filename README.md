@@ -1,28 +1,58 @@
-# Sigue el Ritmo · Demo web
+# Lima Music Store · Tienda demo
 
-Demo conceptual (Impulso Digital) de la web catálogo + cotización por WhatsApp para **Sigue el Ritmo**, tienda de instrumentos musicales en Perú, según el *Brief v2.0 — adaptado al mercado peruano*.
+**Lima Music Store — Tu pasión por la música comienza aquí.**
 
-Sitio estático (HTML + CSS + JS, sin dependencias ni build). Para verlo, abre `index.html` o sirve la carpeta:
+Tienda digital DEMO de instrumentos musicales, equipos de sonido y accesorios musicales, orientada a convertir visitas en consultas por WhatsApp. Diseño y desarrollo: **Rediseñalo.pe**.
 
-```bash
-python3 -m http.server 8000   # http://localhost:8000
+> Productos, precios y contenidos son **demostrativos**. Las marcas, la disponibilidad, el horario y los datos legales están marcados como "por confirmar". La web no procesa pagos.
+
+## Tecnología
+
+Sitio estático sin dependencias ni proceso de build: HTML5 + CSS + JavaScript vanilla.
+
+```
+index.html          Estructura, SEO, Open Graph y datos estructurados (schema.org MusicStore)
+css/styles.css      Estilos (tokens, componentes y responsive)
+js/i18n.js          Textos en español (por defecto) e inglés + distritos de Lima y Callao
+js/products.js      Categorías y catálogo demo (precios en S/)
+js/icons.js         Ilustraciones SVG de productos
+js/app.js           Catálogo, filtros, ficha, lista de consulta, recomendador, WhatsApp, idioma
+img/                Favicon e imagen para compartir (og-image.png)
 ```
 
-## Qué incluye
+## Funciones
 
-- Portada con titular, buscador, franja de confianza (RUC, Yape/Plin, envíos, comprobantes) y WhatsApp flotante.
-- 8 categorías del brief y **38 productos ilustrativos con precios referenciales en soles** (`js/products.js`).
-- Catálogo con filtros por categoría, presupuesto en S/, uso y orden por precio.
-- Ficha de producto con qué incluye, nivel, cantidad, “Añadir a mi lista” y “Cotizar por WhatsApp”.
-- **Lista de cotización** con cantidades, distrito (Lima/Callao) o ciudad (provincia), boleta/factura y mensaje prellenado a WhatsApp.
-- Recomendador en 3 preguntas, guías de elección, envíos y pagos, nosotros/confianza, contacto, Libro de Reclamaciones y aviso de privacidad (Ley N.º 29733).
-- **Botón de idioma Español / English** en la cabecera: traduce toda la interfaz, los productos y el mensaje de WhatsApp; recuerda la elección.
-- Paleta y reglas de contraste del brief (borgoña `#570F16`, dorado `#B47C14`, crema `#F9F8F3`), Bebas Neue + Inter, diseño mobile-first.
+- Catálogo de 42 productos demo en 6 categorías: guitarras y bajos, teclados y pianos, baterías y percusión, micrófonos y audio, amplificadores y accesorios musicales.
+- Buscador, chips de categoría, filtros por presupuesto y uso, y orden por precio.
+- Botón **Consultar** en cada producto: abre WhatsApp con el nombre y el precio del producto.
+- **Mi lista** (carrito de consulta): cantidades, distrito o ciudad, boleta/factura y envío del pedido completo por WhatsApp. Se guarda solo en el navegador del visitante.
+- Recomendador en 3 preguntas, sección "Cómo comprar", Libro de Reclamaciones y aviso de privacidad.
+- Botón **EN / ES**: traduce la interfaz, los productos y los mensajes de WhatsApp.
 
-## Pendiente de la tienda (brief, punto 15)
+## WhatsApp
 
-Todo dato comercial está marcado como “por confirmar”. Antes de publicar, reemplazar:
+- Número: **+51 902 826 428** → `https://wa.me/51902826428`
+- Constante `WHATSAPP` en `js/app.js`; los enlaces estáticos de `index.html` traen el mensaje predeterminado ya codificado.
+- Mensaje predeterminado: "¡Hola, Lima Music Store! Me interesa un instrumento musical y quisiera recibir más información."
 
-- `WHATSAPP` en `js/app.js` (hoy `51999999999`, número de demo).
-- Precios, marcas y productos reales en `js/products.js`; fotos propias en lugar de las ilustraciones SVG de `js/icons.js`.
-- Razón social, RUC, dirección, horario, cobertura de envíos, garantía y Libro de Reclamaciones oficial.
+## Ver en local
+
+```bash
+python3 -m http.server 8000
+# abrir http://localhost:8000
+```
+
+(También funciona abriendo `index.html` directamente en el navegador.)
+
+## Desplegar en Netlify
+
+El proyecto no necesita configuración de build.
+
+- **Despliegue desde Git (configuración actual):** el sitio `sigueelritmo-demo-2026` publica automáticamente la rama `claude/webpage-products-prices-4ewvha`. Al subir los cambios a esa rama, Netlify los publica en producción. *Build command:* vacío · *Publish directory:* `.` (raíz).
+- **Despliegue manual:** en Netlify → *Deploys* → arrastrar la carpeta del proyecto, o con la CLI: `netlify deploy --dir .` (vista previa) y `netlify deploy --dir . --prod` (producción).
+
+## Antes de publicar como tienda real
+
+- Reemplazar productos, precios y marcas en `js/products.js` y añadir fotos reales (`img: "img/productos/archivo.webp"`, WebP ~800×600 px; se cargan en diferido).
+- Confirmar horario, razón social, RUC y el Libro de Reclamaciones oficial.
+- Si se cambia el dominio, actualizar `canonical`, `og:url`, `og:image` y el JSON-LD de `index.html`.
