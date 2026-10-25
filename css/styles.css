@@ -411,7 +411,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
   .site-footer { padding-bottom: 88px; }   /* espacio para el botón flotante */
   .dlg { padding: 26px 18px 20px; }
-  .wa-float { width: 54px; height: 54px; right: 14px; bottom: 14px; }
+  .wa-float { width: 54px; height: 54px; right: 14px; bottom: calc(94px + env(safe-area-inset-bottom, 0px)); }   /* +80 px: libre de la insignia de Netlify */
 }
 @media (max-width: 400px) {
   .head-wa { display: none; }   /* el botón flotante de WhatsApp sigue visible */
