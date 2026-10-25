@@ -241,6 +241,7 @@ window.PRODUCTS = [
   /* ---------- Amplificadores ---------- */
   {
     id: "amp-20", cat: "amplificadores", icon: "amp", price: 490, popular: true,
+    photos: [photo("amplificador-guitarra-20w-reverb-01", 512, 382)],
     uses: ["principiante", "vivo"], level: "inicial",
     es: { name: "Amplificador de guitarra 20 W", desc: "Canal limpio y distorsión, ideal para practicar.", inc: [] },
     en: { name: "20 W guitar amplifier", desc: "Clean and overdrive channels, ideal for practice.", inc: [] }
@@ -254,6 +255,7 @@ window.PRODUCTS = [
   },
   {
     id: "amp-bajo", cat: "amplificadores", icon: "amp", price: 690,
+    photos: [photo("amplificador-bajo-30w-01", 512, 382)],
     uses: ["principiante", "vivo"], level: "inicial",
     es: { name: "Amplificador de bajo 30 W", desc: "Parlante de 10\" y ecualizador de 3 bandas.", inc: [] },
     en: { name: "30 W bass amplifier", desc: "10\" speaker and 3-band EQ.", inc: [] }

@@ -65,9 +65,8 @@ Fotos reales incorporadas por grupos. Originales fuera del proyecto publicado; e
 | Amplificador acústico 40 W | `amplificador-acustico-madera-01` | 33.6 KB | 25.3 KB |
 | Amplificador de teclado 60 W | `amplificador-teclado-3-canales-01` | 37.4 KB | 36.3 KB |
 
-> Observaciones: se recibieron 5 fotos. 3 asignadas (arriba). 2 amplificadores pequeños quedan pendientes de confirmar: el de perillas Volume/Treble/Middle/Bass/Reverb y el de perillas Gain/Bass/Mid/Treble/Volume. Propuesta: el primero para "Amplificador de guitarra 20 W" y el segundo para "Amplificador de bajo 30 W". WebP ya preparados, sin publicar.
+> Observaciones: los 2 amplificadores pequeños se asignaron según confirmación del cliente (orden de envío): `amplificador-guitarra-20w-reverb-01` → Amplificador de guitarra 20 W y `amplificador-bajo-30w-01` → Amplificador de bajo 30 W.
 
-## Pendientes de foto (10)
+## Pendientes de foto (8)
 
-- **Amplificadores:** Amplificador de guitarra 20 W, Amplificador de bajo 30 W
 - **Accesorios musicales:** Afinador cromático de clip, Juego de cuerdas de nylon, Juego de cuerdas para acústica, Cable de instrumento 6 m, Pedestal de micrófono con boom, Baquetas 5A de nogal (par), Estuche acolchado para guitarra, Correa ajustable para guitarra
