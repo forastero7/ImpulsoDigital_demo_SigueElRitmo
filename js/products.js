@@ -111,54 +111,63 @@ window.PRODUCTS = [
   /* ---------- Baterías y percusión ---------- */
   {
     id: "bateria-5", cat: "percusion", icon: "drumkit", price: 2390, popular: true,
+    photos: [photo("bateria-acustica-5-cuerpos-negra-01", 512, 382)],
     uses: ["vivo", "iglesia", "principiante"], level: "inicial",
     es: { name: "Batería acústica 5 cuerpos", desc: "Bombo 22\", tarola, 3 toms, platillos y hardware completo.", inc: ["Hi-hat y crash/ride", "Banco", "Baquetas"] },
     en: { name: "5-piece acoustic drum kit", desc: "22\" kick, snare, 3 toms, cymbals and full hardware.", inc: ["Hi-hat and crash/ride", "Throne", "Sticks"] }
   },
   {
     id: "bateria-e", cat: "percusion", icon: "drumkit", price: 2190,
+    photos: [photo("bateria-electronica-pads-malla-01", 512, 382)],
     uses: ["principiante", "estudio", "iglesia"], level: "intermedio",
     es: { name: "Batería electrónica compacta", desc: "Pads de malla silenciosos y salida de audífonos para practicar en casa.", inc: ["Módulo de sonidos", "Baquetas", "Adaptador"] },
     en: { name: "Compact electronic drum kit", desc: "Quiet mesh pads and headphone out for home practice.", inc: ["Sound module", "Sticks", "Adapter"] }
   },
   {
     id: "cajon-afinable", cat: "percusion", icon: "cajon", price: 380, popular: true,
+    photos: [photo("cajon-peruano-afinable-nogal-01", 512, 382)],
     uses: ["vivo", "principiante", "estudiante"], level: "intermedio",
     es: { name: "Cajón peruano afinable", desc: "Tapa con tornillos de ajuste para controlar el golpe seco.", inc: ["Funda acolchada"] },
     en: { name: "Tunable Peruvian cajón", desc: "Front plate with adjustment screws to shape the slap.", inc: ["Padded bag"] }
   },
   {
     id: "cajon-estudio", cat: "percusion", icon: "cajon", price: 220,
+    photos: [photo("cajon-peruano-estudio-madera-clara-01", 512, 382)],
     uses: ["principiante", "estudiante"], level: "inicial",
     es: { name: "Cajón peruano de estudio", desc: "Liviano y resistente, ideal para clases y talleres.", inc: [] },
     en: { name: "Study Peruvian cajón", desc: "Light and sturdy, ideal for lessons and workshops.", inc: [] }
   },
   {
     id: "congas", cat: "percusion", icon: "conga", price: 1450,
+    photos: [photo("par-congas-madera-soporte-01", 512, 382)],
     uses: ["vivo", "eventos"], level: "intermedio",
     es: { name: "Par de congas 11\" y 12\"", desc: "Cuerpo de madera y soporte doble para salsa y cumbia.", inc: ["Soporte doble", "Llave de afinación"] },
     en: { name: "11\" & 12\" conga pair", desc: "Wooden shells and double stand for salsa and cumbia.", inc: ["Double stand", "Tuning key"] }
   },
   {
     id: "bongos", cat: "percusion", icon: "conga", price: 260,
+    photos: [photo("bongos-madera-01", 512, 382)],
     uses: ["principiante", "vivo"], level: "inicial",
     es: { name: "Bongós de madera 7\" y 8\"", desc: "Afinables y livianos, para empezar en percusión latina.", inc: ["Llave de afinación"] },
     en: { name: "7\" & 8\" wooden bongos", desc: "Tunable and light, to start in Latin percussion.", inc: ["Tuning key"] }
   },
   {
     id: "timbales", cat: "percusion", icon: "drum", price: 1390,
+    photos: [photo("timbales-cromados-cencerro-01", 512, 382)],
     uses: ["vivo", "eventos"], level: "pro",
     es: { name: "Timbales 13\" y 14\" con cencerro", desc: "Cascos de acero, soporte y cencerro para orquesta.", inc: ["Soporte", "Cencerro", "Palos"] },
     en: { name: "13\" & 14\" timbales with cowbell", desc: "Steel shells, stand and cowbell for bands.", inc: ["Stand", "Cowbell", "Sticks"] }
   },
   {
     id: "tarola", cat: "percusion", icon: "snare", price: 230,
+    photos: [photo("tarola-escolar-blanca-correa-01", 512, 382)],
     uses: ["banda", "estudiante"], level: "inicial",
     es: { name: "Tarola escolar 14\"", desc: "Bordonero ajustable y correa, para bandas de colegio.", inc: ["Correa", "Baquetas"] },
     en: { name: "14\" school snare drum", desc: "Adjustable snares and strap, for school bands.", inc: ["Strap", "Sticks"] }
   },
   {
     id: "bombo-desfile", cat: "percusion", icon: "drum", price: 420,
+    photos: [photo("bombo-desfile-blanco-arnes-01", 512, 382)],
     uses: ["banda"], level: "inicial",
     es: { name: "Bombo de desfile 22\"", desc: "Liviano y con arnés, para desfiles y actuaciones.", inc: ["Arnés", "Par de mazos"] },
     en: { name: "22\" marching bass drum", desc: "Lightweight with harness, for parades and events.", inc: ["Harness", "Pair of mallets"] }

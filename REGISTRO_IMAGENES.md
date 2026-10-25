@@ -25,9 +25,24 @@ Fotos reales incorporadas por grupos. Originales fuera del proyecto publicado; e
 
 > Observaciones: la foto del controlador MIDI muestra un teclado más corto que 49 teclas, y el piano digital tiene 3 pedales en el mueble (la ficha dice "Pedal sustain"). Pendiente de confirmar con el cliente.
 
-## Pendientes de foto (31)
+## Grupo 3 · Baterías y percusión (9 fotos)
 
-- **Baterías y percusión:** Batería acústica 5 cuerpos, Batería electrónica compacta, Cajón peruano afinable, Cajón peruano de estudio, Par de congas 11" y 12", Bongós de madera 7" y 8", Timbales 13" y 14" con cencerro, Tarola escolar 14", Bombo de desfile 22"
+| Producto | Archivo | Original (JPG) | WebP 320 + 512 |
+|---|---|---|---|
+| Batería acústica 5 cuerpos | `bateria-acustica-5-cuerpos-negra-01` | 32.3 KB | 26.0 KB |
+| Batería electrónica compacta | `bateria-electronica-pads-malla-01` | 25.0 KB | 19.0 KB |
+| Cajón peruano afinable | `cajon-peruano-afinable-nogal-01` | 23.9 KB | 15.6 KB |
+| Cajón peruano de estudio | `cajon-peruano-estudio-madera-clara-01` | 16.4 KB | 9.2 KB |
+| Par de congas 11" y 12" | `par-congas-madera-soporte-01` | 25.4 KB | 18.4 KB |
+| Bongós de madera 7" y 8" | `bongos-madera-01` | 30.0 KB | 21.6 KB |
+| Timbales 13" y 14" con cencerro | `timbales-cromados-cencerro-01` | 22.6 KB | 17.2 KB |
+| Tarola escolar 14" | `tarola-escolar-blanca-correa-01` | 21.6 KB | 15.9 KB |
+| Bombo de desfile 22" | `bombo-desfile-blanco-arnes-01` | 20.1 KB | 14.5 KB |
+
+> Observaciones: la batería electrónica de la foto es un kit completo (5 pads y 3 platillos), mientras que la web la llama "compacta". Congas, bongós y timbales muestran bordes de cajas de luz del estudio. Pendiente de confirmar con el cliente.
+
+## Pendientes de foto (22)
+
 - **Micrófonos y audio:** Micrófono dinámico vocal, Kit 2 micrófonos inalámbricos UHF, Micrófono condensador de estudio, Interfaz de audio USB 2×2, Consola 8 canales con USB y efectos, Parlante activo 15", Par de monitores de estudio 5", Audífonos de estudio cerrados, Controladora DJ 2 canales
 - **Amplificadores:** Amplificador de guitarra 20 W, Amplificador de guitarra 50 W 1×12", Amplificador de bajo 30 W, Amplificador acústico 40 W, Amplificador de teclado 60 W
 - **Accesorios musicales:** Afinador cromático de clip, Juego de cuerdas de nylon, Juego de cuerdas para acústica, Cable de instrumento 6 m, Pedestal de micrófono con boom, Baquetas 5A de nogal (par), Estuche acolchado para guitarra, Correa ajustable para guitarra
