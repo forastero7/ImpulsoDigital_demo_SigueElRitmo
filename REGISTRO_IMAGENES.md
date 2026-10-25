@@ -1,5 +1,7 @@
 # Registro de imágenes · Lima Music Store
 
+**Estado: carga finalizada** (el cliente confirmó que terminó de enviar las imágenes). 41 de 42 productos con foto real; las baquetas mantienen la ilustración.
+
 Fotos reales incorporadas por grupos. Originales fuera del proyecto publicado; en `img/productos/` solo se guardan las versiones WebP optimizadas (320 px y ancho original).
 
 ## Grupo 1 · Guitarras y bajos (7 fotos)
