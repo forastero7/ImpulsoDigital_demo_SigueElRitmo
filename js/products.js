@@ -278,30 +278,35 @@ window.PRODUCTS = [
   /* ---------- Accesorios musicales ---------- */
   {
     id: "afinador", cat: "accesorios", icon: "tuner", price: 45, popular: true,
+    photos: [photo("afinador-cromatico-clip-01", 512, 382)],
     uses: ["principiante", "estudiante", "vivo"], level: "inicial",
     es: { name: "Afinador cromático de clip", desc: "Para guitarra, bajo, charango y ukelele.", inc: [] },
     en: { name: "Clip-on chromatic tuner", desc: "For guitar, bass, charango and ukulele.", inc: [] }
   },
   {
     id: "cuerdas-nylon", cat: "accesorios", icon: "strings", price: 35,
+    photos: [photo("juego-cuerdas-nylon-guitarra-clasica-01", 512, 382)],
     uses: ["principiante", "estudiante", "vivo"], level: "inicial",
     es: { name: "Juego de cuerdas de nylon", desc: "Tensión normal para guitarra clásica.", inc: [] },
     en: { name: "Nylon string set", desc: "Normal tension for classical guitar.", inc: [] }
   },
   {
     id: "cuerdas-metal", cat: "accesorios", icon: "strings", price: 45,
+    photos: [photo("juego-cuerdas-bronce-guitarra-acustica-01", 512, 382)],
     uses: ["vivo", "iglesia"], level: "inicial",
     es: { name: "Juego de cuerdas para acústica", desc: "Calibre 0.12 de bronce para guitarra de metal.", inc: [] },
     en: { name: "Acoustic guitar string set", desc: "Bronze .012 gauge for steel-string guitar.", inc: [] }
   },
   {
     id: "cable-6", cat: "accesorios", icon: "cable", price: 35,
+    photos: [photo("cable-instrumento-6m-negro-01", 512, 382)],
     uses: ["vivo", "iglesia", "eventos"], level: "inicial",
     es: { name: "Cable de instrumento 6 m", desc: "Plug 6,3 mm con malla trenzada anti ruido.", inc: [] },
     en: { name: "6 m instrument cable", desc: "6.3 mm plugs with braided low-noise shielding.", inc: [] }
   },
   {
     id: "pedestal-mic", cat: "accesorios", icon: "micstand", price: 95,
+    photos: [photo("pedestal-microfono-boom-tripode-01", 512, 382)],
     uses: ["vivo", "iglesia", "eventos"], level: "inicial",
     es: { name: "Pedestal de micrófono con boom", desc: "Base trípode plegable y brazo regulable.", inc: ["Pinza"] },
     en: { name: "Boom microphone stand", desc: "Folding tripod base and adjustable arm.", inc: ["Clip"] }
@@ -314,12 +319,14 @@ window.PRODUCTS = [
   },
   {
     id: "estuche-guitarra", cat: "accesorios", icon: "case", price: 120,
+    photos: [photo("estuche-acolchado-guitarra-negro-01", 512, 382)],
     uses: ["estudiante", "vivo"], level: "inicial",
     es: { name: "Estuche acolchado para guitarra", desc: "Espuma de 10 mm, bolsillos y tiras tipo mochila.", inc: [] },
     en: { name: "Padded guitar gig bag", desc: "10 mm foam, pockets and backpack straps.", inc: [] }
   },
   {
     id: "correa", cat: "accesorios", icon: "pick", price: 40,
+    photos: [photo("correa-guitarra-negra-cuero-01", 512, 382)],
     uses: ["vivo", "principiante"], level: "inicial",
     es: { name: "Correa ajustable para guitarra", desc: "Tejido resistente con extremos de cuero.", inc: [] },
     en: { name: "Adjustable guitar strap", desc: "Durable webbing with leather ends.", inc: [] }

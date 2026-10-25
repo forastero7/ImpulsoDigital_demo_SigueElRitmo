@@ -67,6 +67,20 @@ Fotos reales incorporadas por grupos. Originales fuera del proyecto publicado; e
 
 > Observaciones: los 2 amplificadores pequeños se asignaron según confirmación del cliente (orden de envío): `amplificador-guitarra-20w-reverb-01` → Amplificador de guitarra 20 W y `amplificador-bajo-30w-01` → Amplificador de bajo 30 W.
 
-## Pendientes de foto (8)
+## Grupo 6 · Accesorios musicales (7 fotos)
 
-- **Accesorios musicales:** Afinador cromático de clip, Juego de cuerdas de nylon, Juego de cuerdas para acústica, Cable de instrumento 6 m, Pedestal de micrófono con boom, Baquetas 5A de nogal (par), Estuche acolchado para guitarra, Correa ajustable para guitarra
+| Producto | Archivo | Original (JPG) | WebP 320 + 512 |
+|---|---|---|---|
+| Afinador cromático de clip | `afinador-cromatico-clip-01` | 18.1 KB | 12.6 KB |
+| Juego de cuerdas de nylon | `juego-cuerdas-nylon-guitarra-clasica-01` | 16.2 KB | 10.3 KB |
+| Juego de cuerdas para acústica | `juego-cuerdas-bronce-guitarra-acustica-01` | 18.1 KB | 11.5 KB |
+| Cable de instrumento 6 m | `cable-instrumento-6m-negro-01` | 20.4 KB | 14.6 KB |
+| Pedestal de micrófono con boom | `pedestal-microfono-boom-tripode-01` | 10.5 KB | 5.7 KB |
+| Estuche acolchado para guitarra | `estuche-acolchado-guitarra-negro-01` | 12.3 KB | 7.4 KB |
+| Correa ajustable para guitarra | `correa-guitarra-negra-cuero-01` | 25.1 KB | 18.4 KB |
+
+> Observaciones: se recibieron 7 fotos para 8 accesorios; las "Baquetas 5A de nogal (par)" no tienen foto todavía. Las cuerdas se asignaron por material: el juego con bordonas plateadas y trebles transparentes a nylon; el juego cobrizo a bronce (acústica). El afinador muestra bordes de cajas de luz.
+
+## Pendientes de foto (1)
+
+- **Accesorios musicales:** Baquetas 5A de nogal (par)
